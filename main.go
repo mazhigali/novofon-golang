@@ -3,10 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"net/http"
 	"net/url"
 
-	zApi "github.com/gravitymir/zadarma-golang/v1"
+	zApi "github.com/mazhigali/novofon-golang/v1"
 )
 
 func main() {
@@ -18,9 +17,6 @@ func main() {
 		fmt.Printf("%v\n", err)
 	}
 	if err := statistics(); err != nil {
-		fmt.Printf("%v\n", err)
-	}
-	if err := smsSend(); err != nil {
 		fmt.Printf("%v\n", err)
 	}
 
@@ -234,57 +230,5 @@ func infoTimezone() error {
 		return err
 	}
 	fmt.Printf("%+v", string(data))
-	return nil
-}
-
-//HTTPMethod Post
-func smsSend() error {
-
-	sms := zApi.New{
-		HTTPMethod:   http.MethodPost, // or "POST"
-		APIMethod:    "/v1/sms/send/",
-		APIUserKey:   "e30e16c201343883f77e",
-		APISecretKey: "dbf5606ea4c1f2234201",
-		//params in map
-		ParamsMap: map[string]string{
-			"number":  "67200000000",
-			"message": "Text сообщения\nперенос строки\n1234567890",
-		},
-		//params in string
-		ParamsString: "number=67200000000&message=Text сообщения\nперенос строки\n1234567890",
-		//params in url.Values [recommend]
-		ParamsUrlValues: url.Values{
-			"number": []string{
-				"67200000000", //recipient's phone number
-			},
-			"message": []string{
-				"Text сообщения\nперенос строки\n1234567890",
-			},
-			//"caller_id": []string{"74950000000"}, //[optional]
-		},
-	}
-
-	data := []byte{}
-
-	if err := sms.Request(&data); err != nil {
-		return err
-	}
-
-	result := zApi.CatchSmsSend{} //if zApi.CatchStatistics implement
-	//or
-	result = struct {
-		Status   string  `json:"status"`
-		Messages int     `json:"messages"`
-		Cost     float32 `json:"cost"`
-		Currency string  `json:"currency"`
-		Message  string  `json:"message"`
-	}{}
-
-	if err := json.Unmarshal(data, &result); err != nil {
-		return err
-	}
-
-	prettyPrint(result)
-
 	return nil
 }

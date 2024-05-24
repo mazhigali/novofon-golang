@@ -1,4 +1,4 @@
-package zadarma
+package novofon
 
 import (
 	"crypto/hmac"
@@ -7,7 +7,7 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"errors"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -16,7 +16,7 @@ import (
 	"unicode/utf8"
 )
 
-//New is main struct
+// New is main struct
 type New struct {
 	APIUserKey         string
 	APISecretKey       string
@@ -30,7 +30,7 @@ type New struct {
 	Signature          string
 }
 
-//Request is request to API Zadarma "https://api.zadarma.com"
+// Request is request to API Novofon "https://api.novofon.com"
 func (z *New) Request(slb *[]byte) error {
 
 	if len(z.ParamsUrlValues) == 0 {
@@ -60,7 +60,7 @@ func (z *New) Request(slb *[]byte) error {
 	}
 	defer httpResponse.Body.Close()
 
-	*slb, err = ioutil.ReadAll(httpResponse.Body)
+	*slb, err = io.ReadAll(httpResponse.Body)
 
 	if err != nil {
 		return err
@@ -104,7 +104,7 @@ func prepareData(z *New) (string, error) {
 func getHttpRequest(z *New) (*http.Request, error) {
 	r, err := http.NewRequest(
 		z.HTTPMethod,
-		"https://api.zadarma.com"+z.APIMethod+"?"+z.SortedParamsString, //URL to API,
+		"https://api.novofon.com"+z.APIMethod+"?"+z.SortedParamsString, //URL to API,
 		strings.NewReader(z.ParamsUrlValues.Encode()),                  //post
 	)
 

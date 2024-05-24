@@ -1,4 +1,4 @@
-package zadarma
+package novofon
 
 import (
 	"encoding/json"
@@ -33,6 +33,7 @@ func TestRequest(t *testing.T) {
 	if err := json.Unmarshal(data, &jt); err != nil {
 		t.Error(err)
 	}
+	t.Log("Balance: ", string(data))
 	if jt.Status != "success" && jt.Status != "error" {
 		t.Error(errors.New("Error jt.Status != success, error"))
 	}

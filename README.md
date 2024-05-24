@@ -1,21 +1,21 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/gravitymir/zadarma-golang?logo=github)
-![Github Repository Size](https://img.shields.io/github/repo-size/gravitymir/zadarma-golang?logo=github)
-[![Github forks](https://img.shields.io/github/forks/gravitymir/zadarma-golang?logo=github)](https://github.com/gravitymir/zadarma-golang/network/members)
-![Lines of code](https://img.shields.io/tokei/lines/github.com/gravitymir/zadarma-golang?logo=github)
-[![GitHub open issues](https://img.shields.io/github/issues/gravitymir/zadarma-golang?logo=github)](https://github.com/gravitymir/zadarma-golang/issues)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/gravitymir/zadarma-golang?logo=github)](https://github.com/gravitymir/zadarma-golang/issues)
+![GitHub last commit](https://img.shields.io/github/last-commit/mazhigali/novofon-golang?logo=github)
+![Github Repository Size](https://img.shields.io/github/repo-size/mazhigali/novofon-golang?logo=github)
+[![Github forks](https://img.shields.io/github/forks/mazhigali/novofon-golang?logo=github)](https://github.com/mazhigali/novofon-golang/network/members)
+![Lines of code](https://img.shields.io/tokei/lines/github.com/mazhigali/novofon-golang?logo=github)
+[![GitHub open issues](https://img.shields.io/github/issues/mazhigali/novofon-golang?logo=github)](https://github.com/mazhigali/novofon-golang/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/mazhigali/novofon-golang?logo=github)](https://github.com/mazhigali/novofon-golang/issues)
 
-[![made-with-Go](https://img.shields.io/badge/Zadarma-Go-00aed8?logo=go)](https://pkg.go.dev/github.com/gravitymir/zadarma-golang/zadarma)
-[![Golang go.mod Go version](https://img.shields.io/github/go-mod/go-version/gravitymir/zadarma-golang?label=mod&logo=go)](https://pkg.go.dev/search?q=zadarma)
-[![GoReportCard](https://goreportcard.com/badge/github.com/gravitymir/zadarma-golang)](https://goreportcard.com/report/github.com/gravitymir/zadarma-golang)
+[![made-with-Go](https://img.shields.io/badge/novofon-Go-00aed8?logo=go)](https://pkg.go.dev/github.com/mazhigali/novofon-golang/novofon)
+[![Golang go.mod Go version](https://img.shields.io/github/go-mod/go-version/mazhigali/novofon-golang?label=mod&logo=go)](https://pkg.go.dev/search?q=novofon)
+[![GoReportCard](https://goreportcard.com/badge/github.com/mazhigali/novofon-golang)](https://goreportcard.com/report/github.com/mazhigali/novofon-golang)
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/gravitymir/zadarma-golang?label=zadarma-golang&logo=github&color=505050&logoColor=fff)](https://github.com/gravitymir/zadarma-golang)
-[![GitHub User's stars](https://img.shields.io/github/stars/gravitymir?label=gravitymir&logo=github&color=505050&logoColor=fff)](https://github.com/gravitymir)
+[![GitHub Repo stars](https://img.shields.io/github/stars/mazhigali/novofon-golang?label=novofon-golang&logo=github&color=505050&logoColor=fff)](https://github.com/mazhigali/novofon-golang)
+[![GitHub User's stars](https://img.shields.io/github/stars/mazhigali?label=mazhigali&logo=github&color=505050&logoColor=fff)](https://github.com/mazhigali)
 
-![Zadarma Golang](https://raw.githubusercontent.com/gravitymir/zadarma-golang/master/zadarma_golang.jpg)
+![novofon Golang](https://raw.githubusercontent.com/mazhigali/novofon-golang/master/novofon_golang.jpg)
 
-# zadarma-golang
-Library which help you work with API Zadarma (v1)
+# novofon-golang
+Library which help you work with API novofon (v1)
 
 
 ## Main file for next examples
@@ -28,7 +28,7 @@ import (
 	"net/http"
 	"net/url"
 
-	zApi "github.com/gravitymir/zadarma-golang/v1"
+	zApi "github.com/mazhigali/novofon-golang/v1"
 )
 
 func main() {
@@ -59,8 +59,8 @@ func prettyPrint(data interface{}) {
 
 ## Example get balance
 
-<a href="https://zadarma.com/ru/support/api/#api_info_balance" target="_parent">
-https://zadarma.com/ru/support/api/#api_info_balance</a>
+<a href="https://novofon.com/instructions/api/#api_info_balance_nvf" target="_parent">
+https://novofon.com/instructions/api/#api_info_balance_nvf</a>
 
 ``` go
 func infoBalance() error {
@@ -98,7 +98,7 @@ func infoBalance() error {
 
 ## Example Price
 
-[https://zadarma.com/ru/support/api/#api_info_price](https://zadarma.com/ru/support/api/#api_info_price)
+[https://novofon.com/instructions/api/#api_info_price_nvf](https://novofon.com/instructions/api/#api_info_price_nvf)
 ``` go
 func infoPrice() error {
 
@@ -206,7 +206,7 @@ func infoPrice() error {
 
 ## Get statistics
 
-[https://zadarma.com/ru/support/api/#api_statistic](https://zadarma.com/ru/support/api/#api_statistic)
+[https://novofon.com/instructions/api/#api_statistic_nvf](https://novofon.com/instructions/api/#api_statistic_nvf)
 ``` go
 func statistics() error {
 
@@ -264,7 +264,7 @@ func statistics() error {
 
 ## Get timezone
 
-[https://zadarma.com/ru/support/api/#api_info_timezone](https://zadarma.com/ru/support/api/#api_info_timezone)
+[https://novofon.com/instructions/api/#api_info_timezone](https://novofon.com/instructions/api/#api_info_timezone)
 ``` go
 func infoTimezone() error {
 
@@ -287,59 +287,4 @@ func infoTimezone() error {
 }
 ```
 
-## HTTPMethod POST Send SMS
-
-[https://zadarma.com/ru/support/api/#api_sms_send](https://zadarma.com/ru/support/api/#api_sms_send)
-
-``` go
-func smsSend() error {
-
-	sms := zApi.New{
-		HTTPMethod:   http.MethodPost,
-		APIMethod:    "/v1/sms/send/",
-		APIUserKey:   "e30e16c201343883f77e",
-		APISecretKey: "dbf5606ea4c1f2234201",
-		//params in map
-		ParamsMap: map[string]string{
-			"number":  "67200000000",
-			"message": "Text сообщения\nперенос строки\n1234567890",
-		},
-		//params in string
-		ParamsString: "number=67200000000&message=Text сообщения\nперенос строки\n1234567890",
-		//params in url.Values [recommend]
-		ParamsUrlValues: url.Values{
-			"number": []string{
-				"67200000000", //recipient's phone number
-			},
-			"message": []string{
-				"Text сообщения\nперенос строки\n1234567890",
-			},
-			//"caller_id": []string{"74950000000"}, //[optional]
-		},
-	}
-
-	data := []byte{}
-
-	if err := sms.Request(&data); err != nil {
-		return err
-	}
-
-	result := zApi.CatchSmsSend{} //if zApi.CatchStatistics implement
-	//or
-	result = struct {
-		Status   string  `json:"status"`
-		Messages int     `json:"messages"`
-		Cost     float32 `json:"cost"`
-		Currency string  `json:"currency"`
-		Message  string  `json:"message"`
-	}{}
-
-	if err := json.Unmarshal(data, &result); err != nil {
-		return err
-	}
-
-	prettyPrint(result)
-
-	return nil
-}
 ```

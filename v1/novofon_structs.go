@@ -1,6 +1,6 @@
-package zadarma
+package novofon
 
-//CatchInfoBalance https://zadarma.com/ru/support/api/#api_info_balance
+// CatchInfoBalance https://novofon.com/instructions/api/#api_info_balance_nvf
 type CatchInfoBalance struct {
 	Status   string  `json:"status"`
 	Balance  float32 `json:"balance"`
@@ -8,7 +8,7 @@ type CatchInfoBalance struct {
 	Message  string  `json:"message"`
 }
 
-//CatchInfoPrice https://zadarma.com/ru/support/api/#api_info_price
+// CatchInfoPrice https://novofon.com/instructions/api/#api_info_price_nvf
 type CatchInfoPrice struct {
 	Status string `json:"status"`
 	Info   struct {
@@ -20,7 +20,7 @@ type CatchInfoPrice struct {
 	Message string `json:"message"`
 }
 
-//CatchInfoTimezone https://zadarma.com/ru/support/api/#api_info_timezone
+// CatchInfoTimezone https://novofon.com/instructions/api/#api_info_timezone
 type CatchInfoTimezone struct {
 	Status   string `json:"status"`
 	Unixtime int    `json:"unixtime"`
@@ -29,7 +29,7 @@ type CatchInfoTimezone struct {
 	Message  string `json:"message"`
 }
 
-//CatchTariff https://zadarma.com/ru/support/api/#api_tariff
+// CatchTariff https://novofon.com/instructions/api/#api_tariff_nvf
 type CatchTariff struct {
 	Status string `json:"status"`
 	Info   struct {
@@ -47,7 +47,7 @@ type CatchTariff struct {
 	Message string `json:"message"`
 }
 
-//CatchRequestCallback https://zadarma.com/ru/support/api/#api_callback
+// CatchRequestCallback https://novofon.com/instructions/api/#api_callback_nvf
 type CatchRequestCallback struct {
 	Status  string `json:"status"`
 	From    int    `json:"from"`
@@ -56,16 +56,7 @@ type CatchRequestCallback struct {
 	Message string `json:"message"`
 }
 
-//CatchSmsSend https://zadarma.com/ru/support/api/#api_sms_send
-type CatchSmsSend struct {
-	Status   string  `json:"status"`
-	Messages int     `json:"messages"`
-	Cost     float32 `json:"cost"`
-	Currency string  `json:"currency"`
-	Message  string  `json:"message"`
-}
-
-// CatchRequestChecknumber https://zadarma.com/ru/support/api/#api_request_checknumber
+// CatchRequestChecknumber https://novofon.com/instructions/api/#api_request_checknumber_nvf
 type CatchRequestChecknumber struct {
 	Status  string `json:"status"`
 	From    int    `json:"from"`
@@ -75,27 +66,27 @@ type CatchRequestChecknumber struct {
 	Message string `json:"message"`
 }
 
-// CatchInfoNumber_lookup https://zadarma.com/ru/support/api/#api_info_number_lookup
+// CatchInfoNumber_lookup https://novofon.com/instructions/api/#api_info_number_lookup
 //type CatchInfoNumber struct{}
 
-// CatchInfoListsCurrencies https://zadarma.com/ru/support/api/#api_info_lists_currencies
+// CatchInfoListsCurrencies https://novofon.com/instructions/api/#api_info_lists_currencies_nvf
 type CatchInfoListsCurrencies struct {
 	Status     string   `json:"status"`
 	Currencies []string `json:"currencies"`
 	Message    string   `json:"message"`
 }
 
-// CatchInfoListsLanguages https://zadarma.com/ru/support/api/#api_info_lists_languages
+// CatchInfoListsLanguages https://novofon.com/instructions/api/#api_info_lists_languages_nvf
 type CatchInfoListsLanguages struct {
 	Status    string   `json:"status"`
 	Languages []string `json:"languages"`
 	Message   string   `json:"message"`
 }
 
-// CatchInfoListsTariffs https://zadarma.com/ru/support/api/#api_info_lists_tariffs
+// CatchInfoListsTariffs https://novofon.com/instructions/api/#api_info_lists_tariffs_nvf
 //type CatchInfoListsTariffs struct{}
 
-// CatchInfoListsLanguages https://zadarma.com/ru/support/api/#api_sip_method
+// CatchSip https://novofon.com/instructions/api/#api_sip_method
 type CatchSip struct {
 	Status string `json:"status"`
 	Sips   []struct {
@@ -107,7 +98,7 @@ type CatchSip struct {
 	Message string `json:"message"`
 }
 
-// CatchSipSipStatus https://zadarma.com/ru/support/api/#api_sip_status
+// CatchSipSipStatus https://novofon.com/instructions/api/#api_sip_status
 type CatchSipSipStatus struct {
 	Status   string `json:"status"`
 	Sip      string `json:"sip"`
@@ -115,7 +106,7 @@ type CatchSipSipStatus struct {
 	Message  string `json:"message"`
 }
 
-//CatchSipCallerid  https://zadarma.com/ru/support/api/#api_sip_callerid
+// CatchSipCallerid  https://novofon.com/instructions/api/#api_sip_callerid_nvf
 type CatchSipCallerid struct {
 	Status      string `json:"status"`
 	Sip         string `json:"sip"`
@@ -123,7 +114,7 @@ type CatchSipCallerid struct {
 	Message     string `json:"message"`
 }
 
-// CatchSipRedirection https://zadarma.com/ru/support/api/#api_sip_redirection_get
+// CatchSipRedirection https://novofon.com/instructions/api/#api_sip_redirection_get_nvf
 type CatchSipRedirection struct {
 	Status string `json:"status"`
 	Info   []struct {
@@ -136,7 +127,7 @@ type CatchSipRedirection struct {
 	Message string `json:"message"`
 }
 
-// CatchSipRedirectionPUT https://zadarma.com/ru/support/api/#api_sip_redirection_put
+// CatchSipRedirectionPUT https://novofon.com/instructions/api/#api_sip_redirection_put
 type CatchSipRedirectionPUT struct {
 	Status        string `json:"status"`
 	Sip           string `json:"sip"`
@@ -145,14 +136,14 @@ type CatchSipRedirectionPUT struct {
 	Message       string `json:"message"`
 }
 
-// CatchSipCreate https://zadarma.com/ru/support/api/#api_sip_post_create
+// CatchSipCreate https://novofon.com/instructions/api/#api_sip_post_create
 type CatchSipCreate struct {
 	Status  string `json:"status"`
 	Sip     string `json:"sip"`
 	Message string `json:"message"`
 }
 
-//CatchStatistics https://zadarma.com/ru/support/api/#api_statistic
+// CatchStatistics https://novofon.com/instructions/api/#api_statistic_nvf
 type CatchStatistics struct {
 	Status string `json:"status"`
 	Start  string `json:"start"`

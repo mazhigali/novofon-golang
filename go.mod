@@ -1,3 +1,3 @@
-module github.com/gravitymir/zadarma-golang
+module github.com/mazhigali/novofon-golang
 
-go 1.16
+go 1.22.3
